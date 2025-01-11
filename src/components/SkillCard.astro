@@ -1,0 +1,12 @@
+---
+const { text } = Astro.props;
+---
+
+<div
+  class="bg-[#eff1f5] dark:bg-[#1E1E2E] text-center p-6 rounded-lg shadow-md flex flex-col items-center justify-between hover:transform hover:scale-105 transition-transform duration-300"
+>
+  <div class="icon mb-4">
+    <slot />
+  </div>
+  <p class="text-lg font-medium text-gray-800 dark:text-white">{text}</p>
+</div>

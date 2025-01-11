@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import SkillCard from "../components/SkillCard.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+  <Hero />
+
+  <section id="skills" class="py-16 bg-transparent">
+    <div class="container mx-auto px-6">
+      <h2
+        class="text-3xl font-bold text-center text-[#4C4F69] dark:text-[#CDD6F4] mb-12"
+      >
+        My Skills
+      </h2>
+      <Grid>
+        <SkillCard text="Linux">
+          <Icon name="logos:linux-tux" size={48} />
+        </SkillCard>
+        <SkillCard text="Git">
+          <Icon name="logos:git-icon" size={48} />
+        </SkillCard>
+        <SkillCard text="Go">
+          <Icon name="logos:gopher" size={48} />
+        </SkillCard>
+        <SkillCard text="Python">
+          <Icon name="logos:python" size={48} />
+        </SkillCard>
+        <SkillCard text="JavaScript">
+          <Icon name="logos:javascript" size={48} />
+        </SkillCard>
+        <SkillCard text="React">
+          <Icon name="logos:react" size={48} />
+        </SkillCard>
+        <SkillCard text="SQL">
+          <Icon name="logos:postgresql" size={48} />
+        </SkillCard>
+        <SkillCard text="Docker">
+          <Icon name="logos:docker-icon" size={48} />
+        </SkillCard>
+        <SkillCard text="Kubernetes">
+          <Icon name="logos:kubernetes" size={48} />
+        </SkillCard>
+        <SkillCard text="Vim">
+          <Icon name="logos:vim" size={48} />
+        </SkillCard>
+      </Grid>
+    </div>
+  </section>
+
+  <div class="h-[1000px]"></div>
+</Layout>
