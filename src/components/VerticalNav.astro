@@ -1,200 +1,56 @@
 ---
 import { Image } from "astro:assets";
 import pfp from "../assets/pfp.jpg";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <nav
-  class="fixed top-0 left-0 w-[200px] h-screen bg-[#eff1f5] dark:bg-[#1e1e2e] text-[#4c4f69] dark:text-[#cdd6f4] font-bold flex-col items-center pt-8 shadow-md hidden md:flex overflow-y-scroll"
+    class="fixed top-0 left-0 w-[200px] h-screen bg-[#eff1f5] dark:bg-[#1e1e2e] text-[#4c4f69] dark:text-[#cdd6f4] font-bold flex-col items-center pt-8 shadow-md hidden md:flex overflow-y-scroll"
 >
-  <!-- Profile Circle -->
-  <div class="flex items-center justify-center mb-6">
-    <div
-      class="w-24 h-24 rounded-full overflow-hidden border-4 border-[#4c4f69] dark:border-[#cdd6f4]"
-    >
-      <Image
-        src={pfp}
-        alt="pfp"
-        class="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-      />
+    <!-- PROFILE IMAGE CIRCLE -->
+    <div class="flex items-center justify-center mb-6">
+        <div
+            class="w-24 h-24 rounded-full overflow-hidden border-4 border-[#4c4f69] dark:border-[#cdd6f4]"
+        >
+            <Image
+                src={pfp}
+                alt="Profile Picture"
+                class="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+            />
+        </div>
     </div>
-  </div>
-  <a
-    href="#home"
-    class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
-    >Home</a
-  >
-  <a
-    href="#about"
-    class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
-    >About</a
-  >
-  <a
-    href="#skills"
-    class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
-    >Skills</a
-  >
-  <a
-    href="#projects"
-    class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
-    >Projects</a
-  >
 
-  <!-- Theme Toggle Button at bottom -->
-  <div class="mt-auto mb-8">
-    <button
-      id="themeToggle"
-      class="p-2 rounded-lg hover:bg-[#e6e9ef] dark:hover:bg-[#181825]"
+    <!-- NAVIGATION LINKS -->
+    <a
+        href="#home"
+        class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
+        >Home</a
     >
-      <!-- Sun icon for light mode -->
-      <svg
-        id="sunIcon"
-        class="w-6 h-6 hidden dark:block"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-        ></path>
-      </svg>
-      <!-- Moon icon for dark mode -->
-      <svg
-        id="moonIcon"
-        class="w-6 h-6 block dark:hidden"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-        ></path>
-      </svg>
-    </button>
-  </div>
-  <div class="text-sm text-center mb-2">
-    Made with ❤️ and <a href="http://www.google.com" class="underline">astro</a>
-  </div>
+    <a
+        href="#about"
+        class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
+        >About</a
+    >
+    <a
+        href="#skills"
+        class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
+        >Skills</a
+    >
+    <a
+        href="#projects"
+        class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
+        >Projects</a
+    >
+
+    <!-- THEME TOGGLE BUTTON -->
+    <div class="mt-auto mb-8">
+        <ThemeToggle />
+    </div>
+
+    <!-- FOOTER -->
+    <div class="text-sm text-center mb-2">
+        Made with ❤️ and <a href="https://astro.build/" class="underline"
+            >astro</a
+        >
+    </div>
 </nav>
-
-<!-- Mobile nav with theme toggle -->
-<div
-  class="fixed top-0 left-0 w-full bg-[#eff1f5] dark:bg-[#1e1e2e] text-[#11111b] dark:text-[#cdd6f4] md:hidden z-50 border-b-2 border-[#11111b] dark:border-[#cdd6f4]"
->
-  <div class="flex justify-between items-center p-4">
-    <a href="#home" class="text-lg font-bold">Kyle Curtis</a>
-    <div class="flex items-center gap-4">
-      <button
-        id="mobileThemeToggle"
-        class="p-2 rounded-lg bg-[#eff1f5] dark:bg-[#1e1e2e]"
-      >
-        <!-- Sun icon for light mode -->
-        <svg
-          class="w-6 h-6 hidden dark:block stroke-[#] hover:stroke-[#]"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-          ></path>
-        </svg>
-        <!-- Moon icon for dark mode -->
-        <svg
-          class="w-6 h-6 block dark:hidden"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          ></path>
-        </svg>
-      </button>
-      <button id="menuButton" class="text-2xl" aria-label="Toggle menu"
-        >☰</button
-      >
-    </div>
-  </div>
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden w-full bg-[#eff1f5] dark:bg-[#1e1e2e]">
-    <a
-      href="#home"
-      class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]">Home</a
-    >
-    <a
-      href="#about"
-      class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
-      >About</a
-    >
-    <a
-      href="#skills"
-      class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
-      >Skills</a
-    >
-    <a
-      href="#projects"
-      class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
-      >Projects</a
-    >
-  </div>
-</div>
-
-<script>
-  // Theme toggle logic
-  function updateTheme(darkMode: any) {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }
-
-  // Initialize theme
-  let darkMode =
-    localStorage.getItem("theme") === "dark" ||
-    (!localStorage.getItem("theme") &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
-  updateTheme(darkMode);
-
-  // Theme toggle handlers
-  const toggleTheme = () => {
-    darkMode = !darkMode;
-    updateTheme(darkMode);
-  };
-
-  document
-    .getElementById("themeToggle")
-    ?.addEventListener("click", toggleTheme);
-  document
-    .getElementById("mobileThemeToggle")
-    ?.addEventListener("click", toggleTheme);
-
-  // Mobile menu logic
-  const menuButton = document.getElementById("menuButton");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  menuButton?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-  });
-
-  const mobileLinks = mobileMenu?.querySelectorAll("a");
-  mobileLinks?.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-    });
-  });
-</script>
