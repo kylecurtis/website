@@ -4,10 +4,11 @@ import pfp from "../assets/pfp.jpg";
 import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
+<!-- DESKTOP NAVIGATION -->
 <nav
     class="fixed top-0 left-0 w-[200px] h-screen bg-[#eff1f5] dark:bg-[#1e1e2e] text-[#4c4f69] dark:text-[#cdd6f4] font-bold flex-col items-center pt-8 shadow-md hidden md:flex overflow-y-scroll"
 >
-    <!-- PROFILE IMAGE CIRCLE -->
+    <!-- Profile Circle -->
     <div class="flex items-center justify-center mb-6">
         <div
             class="w-24 h-24 rounded-full overflow-hidden border-4 border-[#4c4f69] dark:border-[#cdd6f4]"
@@ -21,21 +22,25 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     </div>
 
     <!-- NAVIGATION LINKS -->
+
     <a
         href="#home"
         class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
         >Home</a
     >
+
     <a
         href="#about"
         class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
         >About</a
     >
+
     <a
         href="#skills"
         class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
         >Skills</a
     >
+
     <a
         href="#projects"
         class="text-[#4c4f69] dark:text-[#cdd6f4] no-underline my-4 text-lg hover:text-[#8839ef] dark:hover:text-[#8839ef]"
@@ -49,8 +54,67 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 
     <!-- FOOTER -->
     <div class="text-sm text-center mb-2">
-        Made with ❤️ and <a href="https://astro.build/" class="underline"
+        Made with ❤️ and <a href="http://www.google.com" class="underline"
             >astro</a
         >
     </div>
 </nav>
+
+<!-- MOBILE NAVIGATION -->
+<div
+    class="fixed top-0 left-0 w-full bg-[#eff1f5] dark:bg-[#1e1e2e] text-[#11111b] dark:text-[#cdd6f4] md:hidden z-50 border-b-2 border-[#11111b] dark:border-[#cdd6f4]"
+>
+    <div class="flex justify-between items-center p-4">
+        <a href="#home" class="text-lg font-bold">Kyle Curtis</a>
+        <div class="flex items-center gap-4">
+            <ThemeToggle />
+            <button id="menuButton" class="text-2xl" aria-label="Toggle menu"
+                >☰</button
+            >
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden w-full bg-[#eff1f5] dark:bg-[#1e1e2e]">
+        <a
+            href="#home"
+            class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
+            >Home</a
+        >
+
+        <a
+            href="#about"
+            class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
+            >About</a
+        >
+
+        <a
+            href="#skills"
+            class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
+            >Skills</a
+        >
+
+        <a
+            href="#projects"
+            class="block px-4 py-2 hover:bg-[#dce0e8] dark:hover:bg-[#11111b]"
+            >Projects</a
+        >
+    </div>
+</div>
+
+<script>
+    // MOBILE MENU LOGIC
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+
+    const mobileLinks = mobileMenu?.querySelectorAll("a");
+    mobileLinks?.forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu?.classList.add("hidden");
+        });
+    });
+</script>
