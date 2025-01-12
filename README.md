@@ -7,6 +7,16 @@ My custom developer portfolio website (built with Astro).
 
 <br>
 
+## Key Features
+
+- Built from scratch using [Astro](https://astro.build/).
+- Fully responsive UI desktop and mobile.
+- Light and dark theme functionality.
+- Local storage usage to maintain theme state.
+- 100/100 on Performance, Accessibility, Best Practices, and SEO by Google Lighthouse.
+
+<br>
+
 ## Screenshot (Dark)
 ![Website-Screenshot](https://github.com/user-attachments/assets/2b88d25d-5853-4ff1-847e-ba5388cf0062)
 
