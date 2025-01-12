@@ -4,29 +4,31 @@ import VerticalNav from "../components/VerticalNav.astro";
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kyle Curtis: Developer Portfolio</title>
-    <link rel="icon" href="/favicon.svg" type="image/x-icon" />
-    <style is:global>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kyle Curtis: Developer Portfolio</title>
+        <link rel="icon" href="/favicon.svg" type="image/x-icon" />
+        <style is:global>
+            html,
+            nav {
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+            }
+        </style>
+    </head>
 
-  <body
-    class="relative text-[#4c4f69] dark:text-[#cdd6f4] bg-[#dce0e8] dark:bg-[#11111b]"
-  >
-    <VerticalNav />
-    <main
-      class="w-full md:ml-[200px] md:w-[calc(100%-200px)] mt-[60px] md:mt-0 relative border-0"
+    <body
+        class="relative text-[#4c4f69] dark:text-[#cdd6f4] bg-[#dce0e8] dark:bg-[#11111b]"
     >
-      <div class="md:w-[90%] m-auto">
-        <slot />
-        <p class="text-center mb-6">&copy 2025 Kyle Curtis</p>
-      </div>
-    </main>
-  </body>
+        <VerticalNav />
+        <main
+            class="w-full md:ml-[200px] md:w-[calc(100%-200px)] mt-[60px] md:mt-0 relative border-0"
+        >
+            <div class="md:w-[90%] m-auto">
+                <slot />
+                <p class="text-center mb-6">&copy 2025 Kyle Curtis</p>
+            </div>
+        </main>
+    </body>
 </html>
