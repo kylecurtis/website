@@ -13,6 +13,17 @@ import VerticalNav from "../components/VerticalNav.astro";
             html {
                 scroll-behavior: smooth;
             }
+            body {
+                margin: 0;
+                width: 100%;
+                background-size: 42px 42px;
+                background-image: linear-gradient(
+                        to right,
+                        #14141e 2px,
+                        transparent 1px
+                    ),
+                    linear-gradient(to bottom, #14141e 2px, transparent 1px);
+            }
             nav {
                 scrollbar-width: none;
             }
