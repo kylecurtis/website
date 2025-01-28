@@ -2,25 +2,23 @@
 import { Icon } from "astro-icon/components";
 import { Code } from "astro:components";
 import { Image } from "astro:assets";
-import gopher from "../assets/gopher.png";
+import python from "../assets/python.png";
 
 const firstName = "Kyle";
 const lastName = "Curtis";
 const bio = "Student / Software Engineer / Researcher";
 
-const sampleCode = `package main
+const sampleCode = `def main():
+    about = {
+        "location": "127.0.0.1",
+        "education": ["A.S.", "B.A.S."],
+        "interests": ["Systems", "Web", "ML/AI"]
+    }
+    return about
 
-type About struct {
-	Location  string
-	Education []string
-	Interests []string
-}
+if __name__ == "__main__":
+    main()`;
 
-var about = About{
-	Location:  "127.0.0.1",
-	Education: []string{"A.S.", "B.A.S."},
-	Interests: []string{"Systems", "Web", "ML/AI"},
-}`;
 ---
 
 <section id="home" class="flex min-h-screen bg-transparent p-8">
@@ -55,9 +53,9 @@ var about = About{
     <div class="relative md:block w-full xl:w-1/2 mt-16 xl:mt-0">
       <!-- GOPHER IMAGE -->
       <Image
-        src={gopher}
-        alt="gopher"
-        class="absolute -top-12 left-1/2 transform -translate-x-1/2 z-0 w-[100px] md:w-[120px]"
+        src={python}
+        alt="python logo"
+        class="absolute -top-14 left-1/2 transform -translate-x-1/2 z-0 w-[100px] md:w-[120px]"
       />
       <!-- CODE BLOCK -->
       <div
@@ -65,7 +63,7 @@ var about = About{
       >
         <Code
           code={sampleCode}
-          lang="go"
+          lang="python"
           theme="catppuccin-mocha"
           style="padding: 10px; border-radius: 20px;"
         />
