@@ -4,64 +4,46 @@ import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 import SkillCard from "../components/SkillCard.astro";
 import { Icon } from "astro-icon/components";
+
+const skills = [
+    { text: "Linux", icon: "logos:linux-tux" },
+    { text: "Git", icon: "logos:git-icon" },
+    { text: "Python", icon: "logos:python" },
+    { text: "C++", icon: "logos:c-plusplus" },
+    { text: "JavaScript", icon: "logos:javascript" },
+    { text: "React", icon: "logos:react" },
+    { text: "SQL", icon: "logos:postgresql" },
+    { text: "Jupyter", icon: "logos:jupyter" },
+    { text: "PyTorch", icon: "logos:pytorch-icon" },
+    { text: "NumPy", icon: "logos:numpy" },
+    { text: "Pandas", icon: "logos:pandas-icon" },
+    { text: "Docker", icon: "logos:docker-icon" },
+    { text: "Kubernetes", icon: "logos:kubernetes" },
+    { text: "Vim", icon: "logos:vim" },
+];
 ---
 
 <Layout>
-  <Hero />
+    <Hero />
 
-  <section id="skills" class="py-16 bg-transparent">
-    <div class="container mx-auto px-6">
-      <h2
-        class="text-3xl font-bold text-center text-[#4C4F69] dark:text-[#CDD6F4] mb-12"
-      >
-        My Skills
-      </h2>
-      <Grid>
-        <SkillCard text="Linux">
-          <Icon name="logos:linux-tux" size={48} />
-        </SkillCard>
-        <SkillCard text="Git">
-          <Icon name="logos:git-icon" size={48} />
-        </SkillCard>
-        <SkillCard text="Python">
-          <Icon name="logos:python" size={48} />
-        </SkillCard>
-        <SkillCard text="C++">
-          <Icon name="logos:c-plusplus" size={48} />
-        </SkillCard>
-        <SkillCard text="JavaScript">
-          <Icon name="logos:javascript" size={48} />
-        </SkillCard>
-        <SkillCard text="React">
-          <Icon name="logos:react" size={48} />
-        </SkillCard>
-        <SkillCard text="SQL">
-          <Icon name="logos:postgresql" size={48} />
-        </SkillCard>
-        <SkillCard text="Jupyter">
-          <Icon name="logos:jupyter" size={48} />
-        </SkillCard>
-        <SkillCard text="PyTorch">
-          <Icon name="logos:pytorch-icon" size={48} />
-        </SkillCard>
-        <SkillCard text="NumPy">
-          <Icon name="logos:numpy" size={48} />
-        </SkillCard>
-        <SkillCard text="Pandas">
-            <Icon name="logos:pandas-icon" size={48} />
-        </SkillCard>
-        <SkillCard text="Docker">
-          <Icon name="logos:docker-icon" size={48} />
-        </SkillCard>
-        <SkillCard text="Kubernetes">
-          <Icon name="logos:kubernetes" size={48} />
-        </SkillCard>
-        <SkillCard text="Vim">
-          <Icon name="logos:vim" size={48} />
-        </SkillCard>
-      </Grid>
-    </div>
-  </section>
+    <section id="skills" class="py-16 bg-transparent">
+        <div class="container mx-auto px-6">
+            <h2
+                class="text-3xl font-bold text-center text-[#4C4F69] dark:text-[#CDD6F4] mb-12"
+            >
+                My Skills
+            </h2>
+            <Grid>
+                {
+                    skills.map((skill) => (
+                        <SkillCard text={skill.text}>
+                            <Icon name={skill.icon} size={48} />
+                        </SkillCard>
+                    ))
+                }
+            </Grid>
+        </div>
+    </section>
 
-  <div class="h-[1000px]"></div>
+    <div class="h-[1000px]"></div>
 </Layout>
