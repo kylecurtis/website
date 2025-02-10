@@ -2,22 +2,30 @@
 import { Icon } from "astro-icon/components";
 import { Code } from "astro:components";
 import { Image } from "astro:assets";
-import python from "../assets/python.png";
+import CPP from "../assets/CPP.png";
 
 const firstName = "Kyle";
 const lastName = "Curtis";
 const bio = "Student / Software Engineer / Researcher";
 
-const sampleCode = `def main():
-    about = {
-        "location": "127.0.0.1",
-        "education": ["A.S.", "B.A.S."],
-        "interests": ["Systems", "Web", "ML/AI"]
-    }
-    return about
+const sampleCode = `#include <iostream>
+#include <string>
+#include <vector>
 
-if __name__ == "__main__":
-    main()`;
+struct About {
+    std::string location;
+    std::vector<std::string> education;
+    std::vector<std::string> interests;
+};
+
+int main() {
+    About about{
+        .location = "127.0.0.1",
+        .education = {"A.S.", "B.A.S."},
+        .interests = {"Systems", "Embedded", "Gaming"}
+    };
+    return 0;
+}`;
 
 ---
 
@@ -51,11 +59,11 @@ if __name__ == "__main__":
 
     <!-- CODE BLOCK W/ GOPHER -->
     <div class="relative md:block w-full xl:w-1/2 mt-16 xl:mt-0">
-      <!-- GOPHER IMAGE -->
+      <!-- CPP IMAGE -->
       <Image
-        src={python}
-        alt="python logo"
-        class="absolute -top-14 left-1/2 transform -translate-x-1/2 z-0 w-[100px] md:w-[120px]"
+        src={CPP}
+        alt="CPP Logo"
+        class="absolute -top-20 left-1/2 transform -translate-x-1/2 z-0 w-[100px] md:w-[120px]"
       />
       <!-- CODE BLOCK -->
       <div
@@ -63,7 +71,7 @@ if __name__ == "__main__":
       >
         <Code
           code={sampleCode}
-          lang="python"
+          lang="cpp"
           theme="catppuccin-mocha"
           style="padding: 10px; border-radius: 20px;"
         />
